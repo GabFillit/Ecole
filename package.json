@@ -1,0 +1,20 @@
+{
+  "name": "tunder",
+  "version": "1.0.0",
+  "description": "One Paragraph of project description goes here",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init": "build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecnerual/Tunder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecnerual/Tunder/issues"
+  },
+  "homepage": "https://github.com/ecnerual/Tunder#readme"
+}
