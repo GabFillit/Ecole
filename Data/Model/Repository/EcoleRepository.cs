@@ -36,10 +36,5 @@ namespace Data.Model.Repository
         {
             return (await _dbContext.SaveChangesAsync()) > 1;
         }
-
-        public void UpdateEntity(Ecole ecole)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

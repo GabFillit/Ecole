@@ -15,14 +15,15 @@ namespace EcoleMeilleurDisponnible.API.Controllers
     [ApiController]
     public class ProfesseurController : ControllerBase
     {
-        public IProfesseurRepository _professeurRepository;
-        public IEcoleRepository _ecoleRepository;
+        private IProfesseurRepository _professeurRepository;
+        private IEcoleRepository _ecoleRepository;
         private readonly IMapper _mapper;
 
         public ProfesseurController(IMapper mapper, IProfesseurRepository professeurRepository, IEcoleRepository ecoleRepository)
         {
             _mapper = mapper;
             _professeurRepository = professeurRepository;
+            _ecoleRepository = ecoleRepository;
         }
 
         // GET: api/Professeur

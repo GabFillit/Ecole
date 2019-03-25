@@ -8,6 +8,5 @@ namespace Data.BusinessObject.DTO.ecole
     {
         public long id { get; set; }
         public string name { get; set; }
-        public string creationDate { get; set; }
     }
 }

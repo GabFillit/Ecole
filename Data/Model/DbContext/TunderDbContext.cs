@@ -8,6 +8,7 @@ namespace Data.Model.DbContext
         public DbSet<User> Users { get; set; }
         public DbSet<Ecole> Ecoles { get; set; }
         public DbSet<Professeur> Professeurs { get; set; }
+        public DbSet<Eleve> Eleves { get; set; }
     
         public TunderDbContext(DbContextOptions<TunderDbContext> options) : base(options)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data.Model.Repository
 {
-    interface IEleveRepository : IEcoleModelBaseRepository<Eleve>
+    public interface IEleveRepository : IEcoleModelBaseRepository<Eleve>
     {
     }
 }

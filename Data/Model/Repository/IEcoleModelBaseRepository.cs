@@ -9,7 +9,6 @@ namespace Data.Model.Repository
     {
         Task<T> GetById(long id);
         Task<T> CreateEntity(T entity);
-        void UpdateEntity(T entity);
         void DeleteEntity(T entity);
     }
 }

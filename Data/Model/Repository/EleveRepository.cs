@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Data.Model.DbContext;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,29 +9,32 @@ namespace Data.Model.Repository
 {
     public class EleveRepository : IEleveRepository
     {
-        public Task<Eleve> CreateEntity(Eleve entity)
+        private readonly TunderDbContext _dbContext;
+
+        public EleveRepository(TunderDbContext dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public void DeleteEntity(Eleve entity)
+        public async Task<Eleve> CreateEntity(Eleve eleve)
         {
-            throw new NotImplementedException();
+            await _dbContext.Eleves.AddAsync(eleve);
+            return eleve;
         }
 
-        public Task<Eleve> GetById(long id)
+        public void DeleteEntity(Eleve eleve)
         {
-            throw new NotImplementedException();
+            _dbContext.Eleves.Remove(eleve);
         }
 
-        public Task<bool> SaveAsync()
+        public async Task<Eleve> GetById(long id)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Eleves.FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public void UpdateEntity(Eleve entity)
+        public async Task<bool> SaveAsync()
         {
-            throw new NotImplementedException();
+            return (await _dbContext.SaveChangesAsync()) > 1;
         }
     }
 }
